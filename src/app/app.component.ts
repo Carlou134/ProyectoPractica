@@ -10,5 +10,9 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  balanceNumber = 0;
 
+  HandleMessage(message: string){
+    console.log(message);
+  }
 }

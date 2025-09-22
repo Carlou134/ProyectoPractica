@@ -1,10 +1,11 @@
 <div>
   <h1>Inicio</h1>
   <div>
-    <app-user-profile>
+    <app-user-profile [message]="'Buenas buenas'" (messageEmitted)="HandleMessage($event)" [(balance)]="balanceNumber">
       <h1>Pagina Prueba</h1>
       <div class="primero">
         <h2>Prueba para ser analista funcional</h2>
+        <p> {{ balanceNumber }} </p>
       </div>
     </app-user-profile>
   </div>

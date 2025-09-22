@@ -67,6 +67,8 @@
       }
       <input #Prueba type="text" value="Prueba">
       <p> {{ Prueba.value }} </p>
+      <button (click)="BotonPrueba($event)">Prueba</button>
+      <input type="number" (input)="onChangeBalance($event)">
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">

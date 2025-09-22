@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter, Directive } from '@angular/core';
 
 @Component({
   selector: 'app-user-profile',
@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.css'
 })
+
 export class UserProfileComponent {
   user = {
     name: "Carlos",
@@ -21,4 +22,26 @@ export class UserProfileComponent {
   title = 'ProyectoPractica';
 
   numero = 1;
+
+  @Input() message = "hola desde el padre";
+  @Output() messageEmitted = new EventEmitter<string>();
+
+  @Input() balance = 0;
+  @Output() balanceChange = new EventEmitter<number>();
+
+  sendMessage(){
+    this.messageEmitted.emit('Hola desde el hijo');
+  }
+
+  BotonPrueba($event: Event){
+    console.log($event.target);
+    console.log(this.message);
+    this.sendMessage();
+  }
+
+  onChangeBalance($event: Event){
+    const newBalance = Number(($event.target as HTMLInputElement).value);
+    this.balance = newBalance;
+    this.balanceChange.emit(this.balance);
+  }
 }
