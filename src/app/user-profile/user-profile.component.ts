@@ -1,9 +1,10 @@
-import { Component, Input, Output, EventEmitter, Directive } from '@angular/core';
+import { Component, Input, Output, EventEmitter, NgModule } from '@angular/core';
+import { RotatorDirective } from '../rotator.directive';
 
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [],
+  imports: [RotatorDirective],
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.css'
 })
@@ -45,3 +46,4 @@ export class UserProfileComponent {
     this.balanceChange.emit(this.balance);
   }
 }
+

@@ -51,7 +51,7 @@
       <h1>Hello, {{ user.name }}</h1>
       <h2> {{ title }} </h2>
       <p>Congratulations! Your app is running. 🎉</p>
-      <img [src]="user.pictureProfile" class="profile-picture">
+      <img [appRotator]="'90'" [src]="user.pictureProfile" class="profile-picture">
       @if (user.name.length > 5) {
         <p>El nombre es un poco largo</p>
       }

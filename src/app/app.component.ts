@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
@@ -16,3 +16,4 @@ export class AppComponent {
     console.log(message);
   }
 }
+
